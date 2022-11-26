@@ -14,7 +14,7 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 # Package stage
 #
-FROM openjdk:11-jre-slim
-COPY --from=build /home/app/target/Falcon-0.0.1.jar /usr/local/lib/falcon.jar
+FROM openjdk:18-jre-slim
+COPY --from=build /home/app/target/Docker-Test-0.0.1-SNAPSHOT.jar /usr/local/lib/Docker-Test-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/falcon.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/Docker-Test-0.0.1-SNAPSHOT.jar"]

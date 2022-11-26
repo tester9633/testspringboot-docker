@@ -3,6 +3,7 @@
 #
 FROM maven
 WORKDIR /usr/src/myapp
+CMD ["echo" ,"pwd"]
 COPY . /usr/src/myapp/
 # COPY pom.xml /home/app
 RUN mvn -f /home/app/src/pom.xml clean package

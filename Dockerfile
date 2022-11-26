@@ -2,8 +2,8 @@
 # Build stage
 #
 FROM maven
-COPY src /home/app/src
-COPY pom.xml /home/app
+COPY . /home/app/src
+# COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
 #

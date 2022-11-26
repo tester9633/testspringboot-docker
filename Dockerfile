@@ -13,4 +13,4 @@ RUN mvn -f /home/app/src/pom.xml clean package
 FROM openjdk
 COPY --from=build /usr/src/myapp/Docker-Test-0.0.1-SNAPSHOT.jar /usr/src/myapp/Docker-Test.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/src/myapp/Docker-Test.jar"]
+CMD ["java","-jar","/usr/src/myapp/Docker-Test.jar"]
